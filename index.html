@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карина Болдин | Очень-Очень Красиво</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff2e93; /* Яркий розовый */
+            --secondary-color: #000000; /* Черный */
+            --accent-color: #ff66b2; /* Светлый розовый */
+            --light-color: #1a1a1a; /* Темно-серый */
+            --dark-color: #000000; /* Черный */
+            --text-color: #ffffff; /* Белый текст */
+            --text-secondary: #e0e0e0; /* Светло-серый текст */
+            --gradient: linear-gradient(135deg, var(--primary-color), #d40078);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Анимированный фон */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,46,147,0.15) 0%, rgba(255,46,147,0) 70%);
+            animation: float 20s infinite linear;
+        }
+
+        .circle-1 {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .circle-2 {
+            width: 450px;
+            height: 450px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 5s;
+            animation-duration: 25s;
+        }
+
+        .circle-3 {
+            width: 200px;
+            height: 200px;
+            bottom: 15%;
+            left: 15%;
+            animation-delay: 10s;
+            animation-duration: 15s;
+        }
+
+        .circle-4 {
+            width: 350px;
+            height: 350px;
+            top: 20%;
+            right: 20%;
+            animation-delay: 15s;
+            animation-duration: 30s;
+        }
+
+        .bg-particle {
+            position: absolute;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: particleFloat 30s infinite linear;
+        }
+
+        .particle-1 {
+            width: 10px;
+            height: 10px;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .particle-2 {
+            width: 15px;
+            height: 15px;
+            top: 70%;
+            left: 80%;
+            animation-delay: 7s;
+        }
+
+        .particle-3 {
+            width: 8px;
+            height: 8px;
+            top: 40%;
+            left: 85%;
+            animation-delay: 14s;
+        }
+
+        .particle-4 {
+            width: 12px;
+            height: 12px;
+            top: 85%;
+            left: 15%;
+            animation-delay: 21s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(20px, 50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-30px, 30px) rotate(180deg);
+            }
+            75% {
+                transform: translate(10px, -20px) rotate(270deg);
+            }
+        }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0.3;
+            }
+            25% {
+                transform: translate(100px, 50px);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(50px, 100px);
+                opacity: 0.2;
+            }
+            75% {
+                transform: translate(-50px, 30px);
+                opacity: 0.4;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(255, 46, 147, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(255, 46, 147, 0.8);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(255, 46, 147, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 46, 147, 0.5);
+        }
+
+        .logo i {
+            font-size: 2.2rem;
+            animation: pulse 2s infinite;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        nav a:hover:before {
+            left: 0;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: var(--primary-color);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.9) 100%);
+            z-index: -1;
+        }
+
+        .karina-title {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            perspective: 1000px;
+        }
+
+        .karina-title span {
+            font-size: 5.5rem;
+            font-weight: 900;
+            line-height: 1;
+            display: inline-block;
+            text-transform: uppercase;
+            animation: letterFloat 3s infinite ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        /* Цвета для каждой буквы - черно-розовая гамма */
+        .k-letter {
+            color: var(--primary-color);
+            text-shadow: 0 0 20px var(--primary-color);
+            animation-delay: 0s;
+        }
+
+        .a-letter {
+            color: #ff66b2;
+            text-shadow: 0 0 20px #ff66b2;
+            animation-delay: 0.2s;
+        }
+
+        .r-letter {
+            color: #ff2e93;
+            text-shadow: 0 0 20px #ff2e93;
+            animation-delay: 0.4s;
+        }
+
+        .i-letter {
+            color: #ff99cc;
+            text-shadow: 0 0 20px #ff99cc;
+            animation-delay: 0.6s;
+        }
+
+        .n-letter {
+            color: #ff2e93;
+            text-shadow: 0 0 20px #ff2e93;
+            animation-delay: 0.8s;
+        }
+
+        .a2-letter {
+            color: #ff66b2;
+            text-shadow: 0 0 20px #ff66b2;
+            animation-delay: 1s;
+        }
+
+        @keyframes letterFloat {
+            0%, 100% {
+                transform: translateY(0) rotateX(0);
+            }
+            50% {
+                transform: translateY(-20px) rotateX(20deg);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, var(--primary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: pulse 3s infinite;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 25px rgba(255, 46, 147, 0.5);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            animation: glow 2s infinite alternate;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 35px rgba(255, 46, 147, 0.7);
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            color: white;
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+            box-shadow: 0 0 15px var(--primary-color);
+        }
+
+        .services {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            margin: 2rem;
+            border: 1px solid rgba(255, 46, 147, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255, 46, 147, 0.1);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary-color);
+            box-shadow: 0 15px 35px rgba(255, 46, 147, 0.3);
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-content p {
+            color: var(--text-secondary);
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            height: 280px;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(255, 46, 147, 0.4);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.2);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 100%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            background: rgba(26, 26, 26, 0.8);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 46, 147, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--primary-color);
+            transition: all 0.4s ease;
+        }
+
+        .about-img:hover {
+            transform: rotate(-2deg) scale(1.03);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            text-shadow: 0 0 10px rgba(255, 46, 147, 0.3);
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(26, 26, 26, 0.9);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 46, 147, 0.2);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 46, 147, 0.3);
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            color: white;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 46, 147, 0.3);
+        }
+
+        .submit-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 5px 20px rgba(255, 46, 147, 0.4);
+        }
+
+        .submit-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 46, 147, 0.6);
+        }
+
+        .submit-btn:hover:before {
+            left: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.95);
+            color: white;
+            padding: 4rem 0 2rem;
+            border-top: 3px solid var(--primary-color);
+            position: relative;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 46, 147, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 46, 147, 0.3);
+            font-size: 1.3rem;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            color: black;
+            transform: translateY(-8px) rotate(10deg);
+            box-shadow: 0 8px 20px rgba(255, 46, 147, 0.5);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 46, 147, 0.2);
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: var(--text-secondary);
+        }
+
+        /* Адаптивный дизайн */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .karina-title span {
+                font-size: 4rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                width: 100%;
+                margin-top: 1rem;
+                display: none;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                padding: 15px 0;
+                text-align: center;
+                border-bottom: 1px solid rgba(255, 46, 147, 0.2);
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .karina-title span {
+                font-size: 3rem;
+                gap: 5px;
+            }
+            
+            .karina-title {
+                gap: 10px;
+            }
+            
+            .services, .about-content, .contact-form {
+                margin: 1rem;
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+            
+            .karina-title span {
+                font-size: 2.5rem;
+                gap: 3px;
+            }
+            
+            .karina-title {
+                gap: 8px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Анимированный фон -->
+    <div class="bg-animation">
+        <div class="bg-circle circle-1"></div>
+        <div class="bg-circle circle-2"></div>
+        <div class="bg-circle circle-3"></div>
+        <div class="bg-circle circle-4"></div>
+        <div class="bg-particle particle-1"></div>
+        <div class="bg-particle particle-2"></div>
+        <div class="bg-particle particle-3"></div>
+        <div class="bg-particle particle-4"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <span>Карина Болдин</span>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home">Главная</a></li>
+                    <li><a href="#services">Услуги</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <!-- Имя Карина большими анимированными буквами -->
+            <div class="karina-title">
+                <span class="k-letter">К</span>
+                <span class="a-letter">А</span>
+                <span class="r-letter">Р</span>
+                <span class="i-letter">И</span>
+                <span class="n-letter">Н</span>
+                <span class="a2-letter">А</span>
+            </div>
+            
+            <h1></h1>
+            <p>Я - Карина Болдин. Даю самые современные советы по красоте и моде. Каждая женщина обладает уникальной красотой!</p>
+            <a href="#contact" class="cta-button">Получить консультацию</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мои Услуги</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Макияж">
+                    </div>
+                    <div class="service-content">
+                        <h3>Макияж</h3>
+                        <p>Идеальный макияж для любого мероприятия. Естественный, повседневный или вечерний макияж.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Укладка волос">
+                    </div>
+                    <div class="service-content">
+                        <h3>Стилист по волосам</h3>
+                        <p>Укладки, окрашивание, парикмахерское искусство. Предлагаю самые современные прически.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Консультация по моде">
+                    </div>
+                    <div class="service-content">
+                        <h3>Консультант по моде</h3>
+                        <p>Помощь в создании персонального стиля, подбор одежды и комбинаций.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Галерея работ</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Работа 1">
+                    <div class="gallery-overlay">
+                        <h3>Вечерний макияж</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Работа 2">
+                    <div class="gallery-overlay">
+                        <h3>Прическа</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Работа 3">
+                    <div class="gallery-overlay">
+                        <h3>Повседневный стиль</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Работа 4">
+                    <div class="gallery-overlay">
+                        <h3>Естественная красота</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Обо мне</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Карина Болдин">
+                </div>
+                <div class="about-text">
+                    <h3>Карина Болдин - Эксперт по красоте</h3>
+                    <p>Я - эксперт в области красоты с более чем 10-летним опытом. Помогу вам раскрыть вашу природную красоту.</p>
+                    <p>Моя цель - помочь каждой женщине обрести уверенность в себе и полюбить свою красоту. Я помогу вам найти свой персональный стиль, подобрать макияж и прическу.</p>
+                    <p>Мои международные сертификаты и множество довольных клиентов подтверждают качество моей работы.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Контакты</h2>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Ваш телефон</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Ваше сообщение</label>
+                        <textarea id="message" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Отправить сообщение</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Карина Болдин</h3>
+                    <p>Каждая женщина обладает уникальной красотой. Я помогу вам раскрыть эту красоту.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Контактная информация</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Город Ташкент</p>
+                    <p><i class="fas fa-phone"></i> +998 90 123 45 67</p>
+                    <p><i class="fas fa-envelope"></i> info@karinaboldin.ru</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Время работы</h3>
+                    <p>Понедельник - Пятница: 9:00 - 18:00</p>
+                    <p>Суббота: 10:00 - 16:00</p>
+                    <p>Воскресенье: Выходной</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Карина Болдин. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Плавная прокрутка для навигационных ссылок
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+                
+                // Закрыть мобильное меню после клика
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+        
+        // Отправка формы
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Получить значения формы
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            // Анимация отправки
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+            submitBtn.disabled = true;
+            
+            // Имитация отправки
+            setTimeout(() => {
+                // В реальном приложении эти данные отправляются на сервер
+                alert(`Уважаемая ${name}! Ваше сообщение получено. Мы свяжемся с вами в ближайшее время.`);
+                
+                // Сбросить форму
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+        
+        // Добавить активный класс к ссылкам навигации при прокрутке
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('nav a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= sectionTop - 100) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Анимация для букв имени при загрузке
+        document.addEventListener('DOMContentLoaded', function() {
+            const letters = document.querySelectorAll('.karina-title span');
+            letters.forEach((letter, index) => {
+                letter.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
